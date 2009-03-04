@@ -1,0 +1,4 @@
+database.yml
+httpd.conf
+app_config.mine.rb
+tools.mine.rb
