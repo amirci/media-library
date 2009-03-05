@@ -9,7 +9,7 @@ Feature: Browse the latest movies
       |Blazing Saddles|Mel Brooks|
       |Spaceballs|Mel Brooks|
       |Back To The Future|Rober Zemeckis, Steven Spielberg|
-    When I go to the homepage
+    When I go to home
     Then I should see the last 3 movies added
       And the 1st movie has title "Back To The Future"
       And the 2nd movie has title "Spaceballs"
