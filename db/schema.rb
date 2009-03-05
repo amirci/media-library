@@ -13,8 +13,8 @@ ActiveRecord::Schema.define(:version => 20090304034324) do
 
   create_table "movies", :force => true do |t|
     t.string   "title",        :null => false
-    t.string   "directors"
-    t.string   "actors"
+    t.string   "directors",    :null => false
+    t.string   "actors",       :null => false
     t.date     "release_date"
     t.datetime "created_at"
     t.datetime "updated_at"
