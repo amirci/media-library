@@ -3,10 +3,13 @@ When /^the (\d+)(st|nd|rd|th) movie has title "(.*)"$/ do |number, ordinal, titl
 end
 
 When /^that the library has the following movies:$/ do |movies|
-  movie = Movie.new( :title => "Rocky I", 
-                     :actors => "Silvester Stallone",
-                     :directors => "Don't know" )
-  movie.save!
+  movies.hashes.each do |hash|
+    RAILS_DEFAULT_LOGGER.debug "The title for the hash is #{hash[ 'title' ]}"
+    movie = Movie.new( :title => hash[ "title" ],
+                       :actors => hash[ "actors" ],
+                       :directors => hash[ "directors" ] )
+    movie.save!
+  end
 end
 
 When /^I should see the last (\d+) movies added$/ do |amount|

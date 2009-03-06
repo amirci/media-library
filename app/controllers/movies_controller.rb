@@ -1,8 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.find( :all )
-    logger.info( "Returned all the movies #{@movies.length}")
+    @movies = Movie.find( :all, :order => "created_at, id desc" )
   end
 	
 end
